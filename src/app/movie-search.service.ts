@@ -9,8 +9,9 @@ import { map } from 'rxjs/operators';
 
 export class MovieSearchService {
 
-  url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/RiotSchmick?api_key=RGAPI-c685f626-9833-4e34-ad55-d5e055b2d053';
-  pageIndex = 1;
+  // url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name;
+  url = 'https://na1.api.riotgames.com/?api_key=RGAPI-e15209c0-62d0-4bf7-bf09-496e0cac211f';
+
   // GET /lol/summoner/v3/summoners/by-account/{accountId}
   // https://developer.riotgames.com/getting-started.html
 
@@ -22,16 +23,3 @@ export class MovieSearchService {
     console.log(this.url + query);
     return this.http.get(this.url + query).pipe(map((res: Response) => res.json()));
   }
-
-  incrementIndex(){
-    if (this.pageIndex<100)
-      this.pageIndex = this.pageIndex + 1;
-  }
-  decrementIndex(){    
-    if (this.pageIndex>1)
-      this.pageIndex = this.pageIndex - 1;
-  }
-  resetIndex(){
-    this.pageIndex=1;
-  }
-}
