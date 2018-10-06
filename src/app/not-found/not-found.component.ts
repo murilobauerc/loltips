@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: './not-found.component.html',
     // template:`
     //     <div class="jumbotron text-center">
-    //         <p> 404. Filme não encontrado </p>
+    //         <p> 404. Usuario não encontrado. </p>
     //     </div>
     //         `
     styleUrls: ['./not-found.css']
