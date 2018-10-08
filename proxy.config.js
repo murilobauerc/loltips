@@ -1,7 +1,7 @@
 const proxy = [
     {
       context: '/api',
-      target: 'http://localhost:4200',
+      target: 'https://personal-api-riot.herokuapp.com/',
       pathRewrite: {'^/api' : ''}
     }
   ];
