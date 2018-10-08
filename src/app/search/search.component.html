@@ -18,6 +18,7 @@
           <th scope="col">Id</th>
           <th scope="col">accountId</th>
           <th scope="col">name</th>
+          <th scope="col">profileIconId</th>
           <th scope="col">revisionDate</th>
           <th scope="col">summonerLevel</th>
           <!-- <th scope="col">profileIconId</th> -->
@@ -25,8 +26,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let result of resultsArray">
-          <th scope="row">{{result.accountId}}</th>
-          <td>{{result.id}}</td>
+          <th scope="row">{{result.id}}</th>
+          <td>{{result.accountId}}</td>
           <td>{{result.name}}</td>
           <td>{{result.profileIconId}}</td>
           <td>{{result.revisionDate}} </td>

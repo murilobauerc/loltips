@@ -10,14 +10,11 @@ import { map } from 'rxjs/operators';
 export class UserSearchService {
 
   url = 'https://br1.api.riotgames.com/lol/summoner/v3/summoners/by-name/';
-  // example: https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/RiotSchmick?api_key=<key>
   constructor(private http: Http) { }
 
   getUser(summonerName): Observable<any> {
-    let query = summonerName + '?api_key=RGAPI-68964e53-4710-45e2-ab02-592321aa1ebc';
+    let query = summonerName + '?api_key=RGAPI-9ffe75b7-c09a-434f-88d3-8a4232847464';
     console.log(this.url + query);
     return this.http.get(this.url + query).pipe(map((res: Response) => res.json()));
-    // retornará um json, por ex:
-    // {"id":20033079,"accountId":212597818,"name":"Murilonomicon","profileIconId":1386,"revisionDate":1519327548000,"summonerLevel":31}
   }
 }

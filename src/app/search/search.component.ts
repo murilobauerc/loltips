@@ -16,7 +16,6 @@ export class SearchComponent implements OnInit {
   resultsArray = [];
   search = '';
   error = '';
-  totalPages = 0;
   actualSearch = '';
 
   constructor(private service: UserSearchService) { }
@@ -25,7 +24,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchUser() {
-    this.actualSearch = this.search;
+    this.actualSearch = this.search; // 'Murilonomicon'
     this.doRequest();
   }
 
@@ -34,13 +33,14 @@ export class SearchComponent implements OnInit {
     this.searchDone = false;
     this.service.getUser(this.actualSearch.trim()).subscribe(res => {
       console.log(res);
-      if (!res.Search) {
-        this.error = 'Usuário não encontrado.';
-        this.resultsArray = [];
-      }else {
+      if (res.name) {
         this.error = '';
+      }else {
+        this.error = res.status.status_code;
+        this.resultsArray = [];
       }
-      this.resultsArray = res.Search;
+      
+      this.resultsArray.push(res);
       this.searchOnGoing = false;
       this.searchDone = true;
     }, err => this.error = 'Erro de conexão.');
