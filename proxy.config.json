@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://personal-api-riot.herokuapp.com/",
+    "secure": false
+  }
+}
