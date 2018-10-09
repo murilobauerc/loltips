@@ -13,7 +13,7 @@ export class UserSearchService {
   constructor(private http: Http) { }
 
   getUser(summonerName): Observable<any> {
-    let query = summonerName + '?api_key=RGAPI-9ffe75b7-c09a-434f-88d3-8a4232847464';
+    let query = summonerName + '?api_key=RGAPI-9d29da9b-0966-4f9f-b920-eab282ce72e8';
     console.log(this.url + query);
     return this.http.get(this.url + query).pipe(map((res: Response) => res.json()));
   }
