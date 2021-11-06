@@ -9,11 +9,11 @@ import { map } from 'rxjs/operators';
 
 export class UserSearchService {
 
-  url = 'https://br1.api.riotgames.com/lol/summoner/v3/summoners/by-name/';
+  url = 'https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
   constructor(private http: Http) { }
 
   getUser(summonerName): Observable<any> {
-    let query = summonerName + '?api_key=RGAPI-b6bffbc4-30eb-482f-8a71-1a4d7076c50a';
+    let query = summonerName + '?api_key=RGAPI-c2d9cac9-8d9d-4e32-8b0f-c7078048d023';
     console.log(this.url + query);
     return this.http.get(this.url + query).pipe(map((res: Response) => res.json()));
   }
